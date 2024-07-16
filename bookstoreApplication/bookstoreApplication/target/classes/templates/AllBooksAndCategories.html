@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=1">
+        <title>AllBooks</title>
+        <link rel="stylesheet" href="HomePage.css">
+        <!-- <script src="portfolio.js"></script> -->
+    </head>
+</head>
+<header>
+    <div class="hdlft">
+        <img src="—Pngtree—hand drawn cartoon a pile_4045098.png" alt="">
+    </div>
+
+    <div class="hdrgt">
+        <h1>Book Store</h1>
+    </div>
+</header>
+
+<main>
+    <div class="leftpg">
+        <ul>
+            <li><a href="http://localhost:8080/home">Home</a></li>
+            <li><a href="http://localhost:8080/savebook">Save New Book</a></li>
+            <li><a href="http://localhost:8080/savecategory">Save New Category</a></li>
+            <li><a href="http://localhost:8080/allbooksandcategories">All Books And Categories</a></li>
+            <li><a href="#">Update Book</a></li>
+            <li><a href="http://localhost:8080/deletebookbyid">Delete Book</a></li>
+            <!-- <li><a href="http://localhost:8080/allcategories">All Categories</a></li> -->
+        </ul>
+    </div>
+
+    <div class="rightpg">
+
+        <div class="searchpage">
+            <div class="searchbook">
+                <span>Search Book: <input type="text"> <input type="button" value="search"></span>
+            </div>
+            
+<!--            <div class="searchcategory">-->
+<!--                <span>Search Category: <input type="text"> <input type="button" value="search"></span>-->
+<!--            </div>-->
+        </div>
+        <div class="scroller">
+        <table class="booktable">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Category Id</th>
+            </tr>
+            
+            <tr th:each="book: ${books}">
+                <td th:text="${book.id}">1</td>
+                <td th:text="${book.name}">2</td>
+                <td th:text="${book.author}">3</td>
+                <td th:text="${book.price}">4</td>
+                <td th:text="${book.description}">5</td>
+                <td th:text="${book.categoryId}">6</td>
+            </tr>
+        </table>
+
+        <table class="categorytable">
+            <tr>
+                <th>Id</th>
+                <th>Category Name</th>
+            </tr>
+            
+            <tr th:each="category: ${categories}">
+                <td th:text="${category.id}">1</td>
+                <td th:text="${category.categoryName}">2</td>
+            </tr>
+        </table>
+    </div>
+    </div>
+   
+</main>
+<body>
+    
+</body>
+
+</html>>

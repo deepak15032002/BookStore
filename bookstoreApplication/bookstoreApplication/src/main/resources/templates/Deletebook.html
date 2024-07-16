@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>HomePage</title>
+        <link rel="stylesheet" href="HomePage.css">
+
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+</head>
+<body>
+    <header>
+        <div class="hdlft">
+            <img src="—Pngtree—hand drawn cartoon a pile_4045098.png" alt="">
+        </div>
+
+        <div class="hdrgt">
+            <h1>Book Store</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="leftpg">
+            <ul>
+                <li><a href="http://localhost:8080/home">Home</a></li>
+                <li><a href="http://localhost:8080/savebook">Save New Book</a></li>
+                <li><a href="http://localhost:8080/savecategory">Save New Category</a></li>
+                <li><a href="http://localhost:8080/allbooksandcategories">All Books And Categories</a></li>
+                <li><a href="#">Update Book</a></li>
+                <li><a href="http://localhost:8080/deletebookbyid">Delete Book</a></li>
+<!--                <li><a href="http://localhost:8080/allcategories">All Categories</a></li>-->
+            </ul>
+        </div>
+
+        <div class="rightpg">
+           <div class="delpg" >
+            <form th:action="@{/deletedbook}"  method="post" >
+                    <span>Enter Book Id</span>
+                    <br>
+                    <input class="inp" type="number" th:field="*{book.id}">
+                <br>
+<!--                    <h1 th:text="${book.id}"></h1>-->
+                    <input class="btn" type="submit">
+            </form>
+           </div>
+
+           <div class="delallpg">
+                <span>Delete All Record</span>
+                <br>
+                <input class="btn1" type="button" value="Delete All" onclick="myFunction()">
+           </div>
+            <h1 id="demo"></h1>
+        </div>
+       
+    </main>
+
+
+    <script>
+        function myFunction() {
+          var txt;
+          if (confirm("Do you want to delete all records")) {
+            txt = "You pressed OK!";
+            window.open("http://localhost:8080/deleteallbooks");
+          } else {
+            txt = "You pressed Cancel!";
+          }
+          document.getElementById("demo").innerHTML = txt;
+        }
+        </script>
+</body>
+</html>

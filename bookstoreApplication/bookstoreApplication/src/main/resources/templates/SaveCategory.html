@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=1">
+        <title>SaveBook</title>
+        <link rel="stylesheet" href="SaveBook.css">
+    </head>
+</head>
+
+<body>
+    <header>
+        <div class="hdlft">
+            <img src="—Pngtree—hand drawn cartoon a pile_4045098.png" alt="">
+        </div>
+
+        <div class="hdrgt">
+            <h1>Book Store</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="leftpg">
+            <ul>
+                <li><a href="http://localhost:8080/home">Home</a></li>
+                <li><a href="http://localhost:8080/savebook">Save New Book</a></li>
+                <li><a href="http://localhost:8080/savecategory">Save New Category</a></li>
+                <li><a href="http://localhost:8080/allbooksandcategories">All Books And Categories</a></li>
+                <li><a href="#">Update Book</a></li>
+                <li><a href="http://localhost:8080/deletebookbyid">Delete Book</a></li>
+<!--                <li><a href="http://localhost:8080/allcategories">All Categories</a></li>-->
+            </ul>
+        </div>
+
+        <div class="rightpg">
+            <div class="pgrgt">
+                <img src="pngwing.com(4).png" alt="">
+                <form th:action="@{/savecategoryinfo}" th:object="${category}" method="post">
+                    <span>Category Name : <br><input type="text" th:field="*{categoryName}">
+                    </span>
+                    <br> 
+                        <input type="reset">
+                        
+                        <input type="submit">
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
